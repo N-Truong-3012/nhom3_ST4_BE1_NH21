@@ -2,6 +2,9 @@
 	require "config.php";
 	require "models/db.php";
 	require "models/product.php";
+	require "models/protype.php";
+	$protype = new Protype;
+	$getAllProtype = $protype->getAllProtype();
 	$product = new Product;
 	$getAllProducts = $product->getAllProducts();
     $getTenNewProducts = $product->getTenNewProducts();
@@ -96,11 +99,11 @@
 									<select class="input-select">
 										<option value="0">All Categories</option>
 										<option value="1">Laptops</option>
-										<option value="1">SmartPhone</option>
-										<option value="1">Tivi</option>
-										<option value="1">Accessories</option>
+										<option value="2">SmartPhone</option>
+										<option value="3">Tivi</option>
+										<option value="4">Accessories</option>
 									</select>
-									<input class="input" placeholder="Search here"name="keyword">
+									<input class="input" placeholder="Tìm sản phẩm"name="keyword">
 									<button type="submit" class="search-btn">Search</button>
 								</form>
 							</div>
@@ -111,13 +114,13 @@
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
-								<div>
+								<!--<div>
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Your Wishlist</span>
 										<div class="qty">2</div>
 									</a>
-								</div>
+								</div>-->
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
@@ -191,13 +194,11 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<li class="active"><a href="index.php">Home</a></li>
+						<?php foreach ($getAllProtype as $value){ ?>
+						<li><a href="products.php?type_id=<?php echo $value['TYPE_ID']?>">
+						<?php echo $value['TYPE_NAME'] ?></a></li>
+						<?php } ?>
 					</ul>
 					<!-- /NAV -->
 				</div>

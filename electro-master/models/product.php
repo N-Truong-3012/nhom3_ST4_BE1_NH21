@@ -111,6 +111,20 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+    public function search2($keyword, $page, $perPage)
+    {
+        // Tính số thứ tự trang bắt đầu 
+  	    $firstLink = ($page - 1) * $perPage;
+          $sql = self::$connection->prepare("SELECT * FROM products WHERE `NAME` LIKE ? LIMIT ?,?");
+          $firstLink = ($page-1)* $perPage;
+          $keyword = "%$keyword%";
+          $sql->bind_param("sii", $keyword, $firstLink, $perPage);
+          $sql->execute(); //return an object
+          $items = array();
+          $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+          return $items; //return an array
+    }
+
     public function search($keyword)
     {
         $sql = self::$connection->prepare("SELECT * FROM products WHERE `NAME` LIKE ?");
@@ -121,5 +135,41 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+    
+    public function getProductByType($type_id){
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE TYPE_ID = ?");
+        $sql->bind_param("i", $type_id);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+
+    public function get3ProductByType($type_id, $page, $perPage){
+        // Tính số thứ tự trang bắt đầu 
+  	    $firstLink = ($page - 1) * $perPage;
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE TYPE_ID = ? LIMIT ?, ?");
+        $sql->bind_param("iii", $type_id,$firstLink, $perPage);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+
+    function paginate($url, $total, $perPage, $page)
+    {
+        $totalLinks = ceil($total/$perPage);
+ 	    $link ="";
+    	for($j=1; $j <= $totalLinks ; $j++){
+            if($j == $page){
+                $link = $link."<li class='active'>$j</li>";
+            }
+      		else{
+                $link = $link."<li><a href='$url&page=$j'> $j </a></li>";
+              }
+     	}
+     	return $link;
+    }
+
 }
 ?>

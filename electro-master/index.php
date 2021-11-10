@@ -297,7 +297,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Laptop</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -314,7 +314,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Laptop</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -342,7 +342,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Smart Phone</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -359,7 +359,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Smart Phone</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -394,7 +394,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Tivi</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -411,7 +411,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Tivi</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -439,7 +439,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Headphone</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>
@@ -456,7 +456,7 @@
 										<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
+										<p class="product-category">Headphone</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
 										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></h4>
 									</div>

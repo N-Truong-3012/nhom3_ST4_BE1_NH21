@@ -1,4 +1,5 @@
-<?php include "header.php" ?>
+<?php include "header.php"; ?>
+
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
 			<!-- container -->
@@ -236,10 +237,10 @@
 
 						<!-- store products -->
 						<div class="row">
-						<?php
-							if(isset($_GET['keyword'])) {
-							$keyword = $_GET['keyword'];
-								$search = $product->search($keyword);
+							<?php
+							if(isset($_GET['type_id'])){
+								$type_id = $_GET['type_id'];
+								$getProductByType = $product->getProductByType($type_id);
 								// Hiển thị 3 sản phẩm trên 1 trang
 								$perPage = 3; 				
 								// Lấy số trang trên thanh địa chỉ
@@ -248,12 +249,12 @@
 								}
 								else{$page = 1;}
 								// Tính tổng số dòng, ví dụ kết quả là 18
-								$total = count($search); 					
+								$total = count($getProductByType); 					
 								// lấy đường dẫn đến file hiện hành
-								$url = $_SERVER['PHP_SELF']."?keyword=".$keyword;
-								$search2 = $product->search2($keyword, $page, $perPage, $page);
-								foreach ($search2 as $value) {
-						?>
+								$url = $_SERVER['PHP_SELF']."?type_id=".$type_id;
+								$get3ProductByType = $product->get3ProductByType($type_id, $page, $perPage);
+								foreach($get3ProductByType as $value) {
+							?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
@@ -266,7 +267,7 @@
 									<div class="product-body">
 										<p class="product-category">Category</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
-										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?> VND</h4>
+										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?>VND</h4>
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
@@ -286,7 +287,7 @@
 								</div>
 							</div>
 							<!-- /product -->
-							<?php } ?>				
+							<?php } ?>
 						</div>
 						<!-- /store products -->
 
@@ -308,6 +309,5 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-<?php include "footer.php" ?>
-	</body>
-</html>
+
+<?php include "footer.php"; ?>
