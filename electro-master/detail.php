@@ -8,9 +8,7 @@
 					<div class="col-md-12">
 						<ul class="breadcrumb-tree">
 							<li><a href="#">Home</a></li>
-							<li><a href="#">All Categories</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li class="active">Headphones (227,490 Results)</li>
+							<li><a href="#">Detail</a></li>
 						</ul>
 					</div>
 				</div>
@@ -42,74 +40,10 @@
 									</label>
 								</div>
 
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-2">
-									<label for="category-2">
-										<span></span>
-										Smartphones
-										<small>(740)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-3">
-									<label for="category-3">
-										<span></span>
-										Cameras
-										<small>(1450)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-4">
-									<label for="category-4">
-										<span></span>
-										Accessories
-										<small>(578)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-5">
-									<label for="category-5">
-										<span></span>
-										Laptops
-										<small>(120)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-6">
-									<label for="category-6">
-										<span></span>
-										Smartphones
-										<small>(740)</small>
-									</label>
-								</div>
 							</div>
 						</div>
 						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Price</h3>
-							<div class="price-filter">
-								<div id="price-slider"></div>
-								<div class="input-number price-min">
-									<input id="price-min" type="number">
-									<span class="qty-up">+</span>
-									<span class="qty-down">-</span>
-								</div>
-								<span>-</span>
-								<div class="input-number price-max">
-									<input id="price-max" type="number">
-									<span class="qty-up">+</span>
-									<span class="qty-down">-</span>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
+						
 						<!-- aside Widget -->
 						<div class="aside">
 							<h3 class="aside-title">Brand</h3>
@@ -168,39 +102,24 @@
 
 						<!-- aside Widget -->
 						<div class="aside">
-							<h3 class="aside-title">Top selling</h3>
+							<h3 class="aside-title">Related Products</h3>
+							<?php
+								if(isset($_GET['type_id'])){
+									$getRelatedProducts = $product->getRelatedProducts($_GET['type_id']);
+									foreach($getRelatedProducts as $value){
+							?>
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product01.png" alt="">
+									<img src="./img/<?php echo $value['IMAGE'] ?>" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category"><?php echo $value['TYPE_NAME'] ?></p>
+									<h3 class="product-name"><a href="detail.php?type_id=<?php echo $value['TYPE_ID']?>&id=<?php echo $value['ID']?>"><?php echo $value['NAME'] ?></a></h3>
+									<h4 class="product-price"><?php echo number_format($value['PRICE']) ?></del> VND</h4>
 								</div>
 							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product02.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product03.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
+							<?php } ?>
+							<?php } ?>
 						</div>
 						<!-- /aside Widget -->
 					</div>
@@ -208,38 +127,13 @@
 
 					<!-- STORE -->
 					<div id="store" class="col-md-9">
-						<!-- store top filter -->
-						<div class="store-filter clearfix">
-							<div class="store-sort">
-								<label>
-									Sort By:
-									<select class="input-select">
-										<option value="0">Popular</option>
-										<option value="1">Position</option>
-									</select>
-								</label>
-
-								<label>
-									Show:
-									<select class="input-select">
-										<option value="0">20</option>
-										<option value="1">50</option>
-									</select>
-								</label>
-							</div>
-							<ul class="store-grid">
-								<li class="active"><i class="fa fa-th"></i></li>
-								<li><a href="#"><i class="fa fa-th-list"></i></a></li>
-							</ul>
-						</div>
-						<!-- /store top filter -->
 
 						<!-- store products -->
 						<div class="row">
 							<?php
-								if(isset($_GET['ID'])){
+								if(isset($_GET['id'])){
 									foreach($getAllProducts as $value){
-										if ($value['id'] == $_GET['id']) {
+										if ($value['ID'] == $_GET['id']) {
 							 ?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
@@ -252,43 +146,31 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#"><?php echo $value['NAME'] ?></a></h3>
-										<h4 class="product-price"><?php echo number_format($value['IMAGE']) ?>VND</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+										<h3 class="product-name"><a href="detail.php"><?php echo $value['NAME'] ?></a></h3>
+										<h4 class="product-price"><?php echo number_format($value['PRICE']) ?>VND</h4>
 										</div>
 									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
+									
 								</div>
-							</div>
+								<div class="col-md-8 col-xs-6" style="font-size: large">
+									<?php echo $value['DESCRIPTION'] ?></a>
+								</div>							
+							</div>		
+							<div class="add-to-cart" style="left:70%;position: relative;">
+								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+							</div>					
 							<!-- /product -->
+							<?php } ?>
 							<?php } ?>
 						</div>
 						<!-- /store products -->
 
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
-							<ul class="store-pagination">
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-							</ul>
+							<span class="store-qty">Showing detail products</span>
 						</div>
 						<!-- /store bottom filter -->
+						
 						<?php } ?>
 					</div>
 					<!-- /STORE -->

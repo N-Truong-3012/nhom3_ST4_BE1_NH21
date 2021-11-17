@@ -170,6 +170,15 @@ class Product extends Db
      	}
      	return $link;
     }
-
+    public function getRelatedProducts($type_id)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products, protypes
+        WHERE products.TYPE_ID = ? and products.TYPE_ID = protypes.TYPE_ID ORDER BY SLBAN DESC LIMIT 0,3");
+        $sql->bind_param("i", $type_id);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
 }
 ?>

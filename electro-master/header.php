@@ -64,13 +64,10 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+						<li style="color: white"><i class="fa fa-phone"></i> 0838 970 023</li>
+						<li style="color: white"><i class="fa fa-envelope-o"></i> tdc@edu.vn</li>
+						<li><a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+Cao+%C4%90%E1%BA%B3ng+C%C3%B4ng+ngh%E1%BB%87+Th%E1%BB%A7+%C4%90%E1%BB%A9c/@10.8514325,106.7580641,15z/data=!4m5!3m4!1s0x0:0xb3ff69197b10ec4f!8m2!3d10.8514325!4d106.7580641">
+						<i class="fa fa-map-marker"></i> 53 Võ Văn Ngân, P.Linh Chiểu, TP.THủ Đức, TP.Hồ Chí Minh</a></li>
 					</ul>
 				</div>
 			</div>
@@ -85,7 +82,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="index.php" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
