@@ -69,7 +69,7 @@
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a onclick="alert('Dlete Manufacture Success')" class="btn btn-danger btn-sm" href="delmanu.php?id=<?php echo $value['MANU_ID'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

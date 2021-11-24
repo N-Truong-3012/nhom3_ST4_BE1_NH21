@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $image = $_FILES['img']['name'];
     $feature = $_POST['feature'];
     $slt = $_POST['SLTK'];
-    $product->AddProduct($name, $manu_id, $type_id, $image, $price, $desc, $feature, $slt);
+    $product->AddProduct($name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt);
     //Upload hinh:
     $target_dir = "../img/";
     $target_file = $target_dir . basename($_FILES["img"]["name"]);

@@ -94,11 +94,7 @@
 							<div class="header-search">
 								<form method="get" action="result.php">
 									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Laptops</option>
-										<option value="2">SmartPhone</option>
-										<option value="3">Tivi</option>
-										<option value="4">Accessories</option>
+										<option>All Categories</option>
 									</select>
 									<input class="input" placeholder="Tìm sản phẩm"name="keyword">
 									<button type="submit" class="search-btn">Search</button>

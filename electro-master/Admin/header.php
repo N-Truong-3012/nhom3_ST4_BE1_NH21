@@ -146,6 +146,30 @@ $manufacture = new Manufacture;
                   <p>Edit Product</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="addmanu.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Manufacture</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Edit Manufacture</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="addtype.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Protype</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/project-edit.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Edit Protype</p>
+                </a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
