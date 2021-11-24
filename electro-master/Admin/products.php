@@ -87,7 +87,7 @@ include "header.php";
                               </i>
                               Edit
                           </a>
-                          <a onclick="alert('Dlete Product Success') class="btn btn-danger btn-sm" href="delproduct.php?id=<?php echo $value['ID'] ?>">
+                          <a onclick="alert('Dlete Product Success')" class="btn btn-danger btn-sm" href="delproduct.php?id=<?php echo $value['ID'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete
