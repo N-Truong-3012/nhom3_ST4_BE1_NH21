@@ -45,11 +45,11 @@ include "header.php";
                       <th style="width: 1%">ID</th>
                       <th style="width: 12%">NAME</th>
                       <th style="width: 10%">IMAGE</th>
-                      <th style="width: 30%">DESCRIPTION</th>
+                      <th style="width: 30%;text-align: center;">DESCRIPTION</th>
                       <th>PRICE </th>
                       <th style="width: 8%" class="text-center">Manufacture</th>
                       <th style="width: 8%" class="text-center">Protypes</th>
-                      <th style="width: 20%">Action</th>
+                      <th style="width: 20%;text-align: center;">Action</th>
                   </tr>
               </thead>
               <tbody>
@@ -82,12 +82,12 @@ include "header.php";
                           <span class="badge badge-success"><?php echo $value['TYPE_NAME']; ?></span>
                       </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                          <a class="btn btn-info btn-sm " href="#"style="margin-right: 10px;">
+                              <i class="fas fa-pencil-alt">
                               </i>
-                              View
+                              Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a onclick="alert('Dlete Product Success') class="btn btn-danger btn-sm" href="delproduct.php?id=<?php echo $value['ID'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

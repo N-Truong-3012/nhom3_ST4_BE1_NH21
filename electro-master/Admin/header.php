@@ -135,15 +135,15 @@ $manufacture = new Manufacture;
                 </a>
             </li>
             <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="addproduct.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
+                  <p>Add Product</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="pages/examples/project-edit.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
+                  <p>Edit Product</p>
                 </a>
             </li>
         </ul>
