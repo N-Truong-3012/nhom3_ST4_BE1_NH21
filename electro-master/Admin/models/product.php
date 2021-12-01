@@ -43,4 +43,27 @@ class Product extends Db{
         $sql->bind_param("i", $id);
         return $sql->execute(); //return
     }
+
+    public function getAllProductsByID($id)
+    {
+        $sql = self::$connection->prepare("SELECT * 
+        FROM products,manufactures, protypes
+        Where products.MANU_ID = manufactures.MANU_ID
+        and products.TYPE_ID=protypes.TYPE_ID and products.ID = $id"
+        );
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+
+    public function EditProduct($id, $name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt)
+    {
+        $sql = self::$connection->prepare("UPDATE `products` SET 
+        `NAME`=?,`MANU_ID`=?,`TYPE_ID`=?,`PRICE`=?,`IMAGE`=?,
+        `DESCRIPTION`=?,`FEATURE`=?,`CREATE_AT`=?,`SLTK`=?,`SLBAN`=? 
+        WHERE `ID` = $id");
+        $sql->bind_param("siiissii", $name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt);
+        return $sql->execute(); //return
+    }
 }

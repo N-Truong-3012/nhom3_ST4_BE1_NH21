@@ -17,7 +17,13 @@ if(isset($_POST['submit'])){
     //Upload hinh:
     $target_dir = "../img/";
     $target_file = $target_dir . basename($_FILES["img"]["name"]);
-    move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    }else{
+        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+    }
+    
 }
 header('location:products.php');
 ?>
