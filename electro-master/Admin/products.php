@@ -49,6 +49,8 @@ include "header.php";
                       <th>PRICE </th>
                       <th style="width: 8%" class="text-center">Manufacture</th>
                       <th style="width: 8%" class="text-center">Protypes</th>
+                      <th style="width: 5%" class="text-center">SLTK</th>
+                      <th style="width: 5%" class="text-center">SLBAN</th>
                       <th style="width: 20%;text-align: center;">Action</th>
                   </tr>
               </thead>
@@ -58,31 +60,35 @@ include "header.php";
                     foreach($getAllProducts as $value):
                   ?>
                   <tr>
-                      <td>
+                      <td style="text-align: center;">
                           <?php echo $value['ID']; ?>
                       </td>
                       <td>
-                          <a>
-                          <?php echo $value['NAME']; ?>
-                          </a>
+                        <?php echo $value['NAME']; ?>
                       </td>
                       <td>
                         <img width = "50px" src="../img/<?php echo $value['IMAGE'] ?>" alt="">
                       </td>
-                      <td class="project_progress" class="overflow">
+                      <td class="project_progress" class="overflow" >
                       <?php echo $value['DESCRIPTION']; ?>
                       </td>
                       <td class="project_progress">
                       <?php echo number_format( $value['PRICE']); ?> VND
                       </td>
                       <td class="project-state">
-                          <span class="badge badge-success"><?php echo $value['MANU_NAME']; ?></span>
+                          <span class="badge badge-success" style="text-align: center;"><?php echo $value['MANU_NAME']; ?></span>
                       </td>
                       <td class="project-state">
-                          <span class="badge badge-success"><?php echo $value['TYPE_NAME']; ?></span>
+                          <span class="badge badge-success" style="text-align: center;"><?php echo $value['TYPE_NAME']; ?></span>
+                      </td>
+                      <td class="project_progress" class="overflow" style="text-align: center;">
+                      <?php echo $value['SLTK']; ?>
+                      </td>
+                      <td class="project_progress" class="overflow" style="text-align: center;">
+                      <?php echo $value['SLBAN']; ?>
                       </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm " href="#"style="margin-right: 10px;">
+                          <a class="btn btn-info btn-sm " href="editproduct.php?id=<?php echo $value['ID']?>&manu_id=<?php echo $value['MANU_ID'] ?>"style="margin-right: 10px;">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit

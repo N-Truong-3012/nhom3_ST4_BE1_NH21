@@ -44,13 +44,12 @@ class Product extends Db{
         return $sql->execute(); //return
     }
 
-    public function getAllProductsByID($id)
+    public function getProductsByID($id)
     {
         $sql = self::$connection->prepare("SELECT * 
-        FROM products,manufactures, protypes
-        Where products.MANU_ID = manufactures.MANU_ID
-        and products.TYPE_ID=protypes.TYPE_ID and products.ID = $id"
-        );
+        FROM products
+        Where products.ID = ?");
+        $sql->bind_param("i", $id);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -59,11 +58,20 @@ class Product extends Db{
 
     public function EditProduct($id, $name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt)
     {
-        $sql = self::$connection->prepare("UPDATE `products` SET 
-        `NAME`=?,`MANU_ID`=?,`TYPE_ID`=?,`PRICE`=?,`IMAGE`=?,
-        `DESCRIPTION`=?,`FEATURE`=?,`CREATE_AT`=?,`SLTK`=?,`SLBAN`=? 
-        WHERE `ID` = $id");
-        $sql->bind_param("siiissii", $name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt);
+        if ($image == null) {
+            $sql = self::$connection->prepare("UPDATE `products` SET 
+            `NAME`=?,`MANU_ID`=?,`TYPE_ID`=?,`PRICE`=?,
+            `DESCRIPTION`=?,`FEATURE`=?,`SLTK`=? 
+            WHERE `ID` = ?");
+            $sql->bind_param("siiisiii", $name, $manu_id, $type_id, $price, $desc, $feature, $slt, $id);
+        }else{
+            $sql = self::$connection->prepare("UPDATE `products` SET 
+            `NAME`=?,`MANU_ID`=?,`TYPE_ID`=?,`PRICE`=?, `IMAGE`=?,
+            `DESCRIPTION`=?,`FEATURE`=?,`SLTK`=? 
+            WHERE `ID` = ?");
+            $sql->bind_param("siiissiii", $name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt, $id);
+        }
+        
         return $sql->execute(); //return
     }
 }

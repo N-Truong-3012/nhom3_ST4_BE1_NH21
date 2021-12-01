@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Product</h1>
+            <h1>Edit Product</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Add Product</li>
+              <li class="breadcrumb-item active">Edit Product</li>
             </ol>
           </div>
         </div>
@@ -21,7 +21,12 @@
 
     <!-- Main content -->
     <section class="content">
-      <form action="add.php" method="post" enctype="multipart/form-data">
+    <?php
+      if (isset($_GET['id'])) {
+      $getProductsByID = $product->getProductsByID($_GET['id']);
+      foreach ($getProductsByID as $value) { 
+    ?>
+      <form action="edit.php?id=<?php echo $value['ID']?>" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">
@@ -34,65 +39,82 @@
                 </button>
               </div>
             </div>
+            
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Name</label>
-                <input type="text" id="inputName" class="form-control" name="name">
+                <input type="text" id="inputName" class="form-control" name="name" value='<?php echo $value['NAME']?>'>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Manufacture</label>
-                <select id="inputStatus" class="form-control custom-select" name="manu">
-                  <option selected disabled>Select one</option>
+                <select id="inputStatus" class="form-control custom-select" name="manu">                  
                   <?php
                     $getAllManus = $manufacture->getAllManufactures();
-                    foreach($getAllManus as $value) {
+                    foreach($getAllManus as $value2) {
+                      if($value2["MANU_ID"] == $value["MANU_ID"]){
                   ?>
-                  <option value=<?php echo $value["MANU_ID"]?>>
-                  <?php echo $value["MANU_NAME"] ?> 
+                  <option selected value=<?php echo $value2["MANU_ID"]?>>
+                  <?php echo $value2["MANU_NAME"] ?> 
                   </option>
-                  <?php } ?>
+                  <?php }else{ ?>
+                  <option value=<?php echo $value2["MANU_ID"]?>>
+                  <?php echo $value2["MANU_NAME"] ?> 
+                  </option>
+        <?php } ?>
+      <?php } ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Protype</label>
                 <select id="inputStatus" class="form-control custom-select" name="protype">
-                  <option selected disabled>Select one</option>
                   <?php
                     $getAllProtypes = $protype->getAllProtype();
-                    foreach($getAllProtypes as $value) {
+                    foreach($getAllProtypes as $value3) {
+                      if($value3["TYPE_ID"] == $value["TYPE_ID"]){
                   ?>
-                  <option value=<?php echo $value["TYPE_ID"]?>>
-                  <?php echo $value["TYPE_NAME"] ?> 
+                  <option selected value=<?php echo $value3["TYPE_ID"]?>>
+                  <?php echo $value3["TYPE_NAME"] ?> 
                   </option>
+                  <?php }else{ ?>
+                  <option value=<?php echo $value3["TYPE_ID"]?>>
+                  <?php echo $value3["TYPE_NAME"] ?> 
+                  </option>
+                  <?php } ?>
                   <?php } ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputName">Price</label>
-                <input type="text" id="inputName" class="form-control" name="price">
+                <input type="text" id="inputName" class="form-control" name="price" value='<?php echo $value['PRICE']?>'>
               </div>
               <div class="form-group">
                 <label for="inputDescription">Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4" name="description"></textarea>
+                <textarea id="inputDescription" class="form-control" rows="4" name="description"><?php echo $value['DESCRIPTION']?></textarea>
               </div>
               
               <div class="form-group">
                 <label for="inputClientCompany">Image</label>
                 <input type="file" id="inputClientCompany" class="form-control" name="img">
+                <img src="../img/<?php echo $value['IMAGE'] ?>" alt="" width="20%;">
               </div>
               <div class="form-group">
                 <label for="inputProjectLeader">Feature</label>
                 <select class="input-select" name="feature">
-                    <option selected disabled>Select one</option>
-										<option value="0">0</option>
-										<option value="1">1</option>
+                    <option selected><?php echo $value['FEATURE']?></option>
+                    <?php if ($value['FEATURE'] == "0") {?>
+										<option value="0">1</option>
+                    <?php }else{?>
+										<option value="1">0</option>
+                    <?php } ?>
 									</select>
               </div>
               <div class="form-group">
                 <label for="inputName">Quantity</label>
-                <input type="text" id="inputName" class="form-control" name="SLTK">
+                <input type="text" id="inputName" class="form-control" name="SLTK" value='<?php echo $value['SLTK']?>'>
               </div>
             </div>
+            <?php } ?>
+            <?php } ?>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
@@ -100,8 +122,8 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <a href="index.php" class="btn btn-secondary">Cancel</a>
-          <input name="submit" onclick="alert('Add Product Success')" type="submit" value="Create new Porduct" class="btn btn-success float-right">
+          <a href="index.php" class="btn btn-secondary">Cancel</a> 
+          <input name="submit" onclick="alert(' Edit Product Success')" type="submit" value="Edit Porduct" class="btn btn-success float-right">
         </div>
       </div>
       </form>
