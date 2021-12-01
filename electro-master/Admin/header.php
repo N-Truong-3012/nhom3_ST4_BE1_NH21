@@ -124,6 +124,12 @@ $manufacture = new Manufacture;
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
+                <a href="products.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Product</p>
+                </a>
+            </li>
+                <li class="nav-item">
                 <a href="addproduct.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Product</p>
@@ -147,6 +153,12 @@ $manufacture = new Manufacture;
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
+                <a href="manufactures.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Manufacture</p>
+                </a>
+            </li>
+                <li class="nav-item">
                 <a href="addmanu.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Manufacture</p>
@@ -169,6 +181,12 @@ $manufacture = new Manufacture;
                   <p>Protypes</p>
                 </a>
                 <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="protypes.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Protype</p>
+                </a>
+            </li>
                 <li class="nav-item">
                 <a href="addtype.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
