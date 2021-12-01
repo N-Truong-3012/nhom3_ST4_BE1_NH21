@@ -64,12 +64,12 @@
                           <?php echo $value['TYPE_NAME']; ?>
                       </td>
                       <td class="project-actions text-center">
-                          <a class="btn btn-info btn-sm " href="#"style="margin-right: 10px;">
+                          <a class="btn btn-info btn-sm " href="edittype.php?id=<?php echo $value['TYPE_ID']?>"style="margin-right: 10px;">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a onclick="alert('Dlete Protype Success')" class="btn btn-danger btn-sm" href="deltype.php?id=<?php echo $value['TYPE_ID'] ?>">
+                          <a class="btn btn-danger btn-sm" href="deltype.php?id=<?php echo $value['TYPE_ID'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

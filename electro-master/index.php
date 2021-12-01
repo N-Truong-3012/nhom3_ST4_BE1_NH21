@@ -116,7 +116,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i><a href="giohang.php?id=<?php echo $value['ID'] ?>"> add to cart</a></button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -230,7 +230,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i><a href="giohang.php?id=<?php echo $value['ID'] ?>"> add to cart</a></button>
 											</div>
 										</div>
 										<!-- /product -->

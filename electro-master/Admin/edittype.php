@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit Manufacture</h1>
+            <h1>Edit Protype</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Edit Manufacture</li>
+              <li class="breadcrumb-item active">Edit Protype</li>
             </ol>
           </div>
         </div>
@@ -26,7 +26,7 @@
       $getTypeByID = $protype->getTypeByID($_GET['id']);
       foreach ($getTypeByID as $value) { 
     ?>
-      <form action="edit2.php?id=<?php echo $value['MANU_ID']?>" method="post" enctype="multipart/form-data">
+      <form action="edit3.php?id=<?php echo $value['TYPE_ID']?>" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">
@@ -42,7 +42,7 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Name</label>
-                <input type="text" id="inputName" class="form-control" name="name" value='<?php echo $value['MANU_NAME']?>'>
+                <input type="text" id="inputName" class="form-control" name="name" value='<?php echo $value['TYPE_NAME']?>'>
               </div>
             </div>
             <?php } ?>
@@ -55,7 +55,7 @@
       <div class="row">
         <div class="col-12">
           <a href="index.php" class="btn btn-secondary">Cancel</a>
-          <input name="submit" onclick="alert('Edit Manufacture Success')" type="submit" value="Edit Manufacture" class="btn btn-success float-right">
+          <input name="submit" onclick="alert('Edit Protype Success')" type="submit" value="Edit Protype" class="btn btn-success float-right">
         </div>
       </div>
       </form>
