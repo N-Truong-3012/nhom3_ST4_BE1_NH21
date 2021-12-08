@@ -20,11 +20,11 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content">    
     <?php
       if (isset($_GET['id'])) {
-      $getTypeByID = $protype->getTypeByID($_GET['id']);
-      foreach ($getTypeByID as $value) { 
+      $getManuByID = $manufacture->getManuByID($_GET['id']);
+      foreach ($getManuByID as $value) { 
     ?>
       <form action="edit2.php?id=<?php echo $value['MANU_ID']?>" method="post" enctype="multipart/form-data">
       <div class="row">

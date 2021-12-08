@@ -70,8 +70,23 @@ class Product extends Db{
             `DESCRIPTION`=?,`FEATURE`=?,`SLTK`=? 
             WHERE `ID` = ?");
             $sql->bind_param("siiissiii", $name, $manu_id, $type_id, $price, $image, $desc, $feature, $slt, $id);
-        }
-        
+        }       
         return $sql->execute(); //return
+    }
+
+    public function countProducts()
+    {
+        $sql = self::$connection->prepare("SELECT COUNT(*) FROM `products`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+
+    public function sumProductsBought()
+    {
+        $sql = self::$connection->prepare("SELECT SUM(`SLBAN`) FROM `products`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
     }
 }

@@ -123,7 +123,6 @@
 									<a class="dropdown-toggle" aria-expanded="true" href="giohang.php">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
-										<div class="qty">3</div>
 									</a>
 								</div>
 								<!-- /Cart -->

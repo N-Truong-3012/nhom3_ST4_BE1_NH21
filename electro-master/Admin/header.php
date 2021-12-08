@@ -79,6 +79,13 @@ $manufacture = new Manufacture;
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
+      </li> 
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="logout" href="../login/logout.php" role="button">
+        <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </li> 
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -96,10 +103,10 @@ $manufacture = new Manufacture;
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../img/gr3.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Nhóm 3</a>
         </div>
       </div>
 
@@ -135,12 +142,6 @@ $manufacture = new Manufacture;
                   <p>Add Product</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Product</p>
-                </a>
-            </li>
                 </ul>
               </li>
             </ul>
@@ -164,12 +165,6 @@ $manufacture = new Manufacture;
                   <p>Add Manufacture</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Manufacture</p>
-                </a>
-            </li>
                 </ul>
               </li>
             </ul>
@@ -191,12 +186,6 @@ $manufacture = new Manufacture;
                 <a href="addtype.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Protype</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Protype</p>
                 </a>
             </li>
                 </ul>

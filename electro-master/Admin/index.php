@@ -29,9 +29,15 @@
             <!-- small box -->
             <div class="small-box bg-info" style="padding-top:80px;">
               <div class="inner">
-                <h3>150</h3>
-
-                <p>New Orders</p>
+                <?php 
+                  $countProducts = $product->countProducts();
+                  foreach($countProducts as $key=>$value){
+                    foreach($value as $value2) {
+                ?>
+                <h3><?php echo $value2; ?></h3>
+                <?php } ?>
+                <?php } ?>
+                <p>Products</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -44,9 +50,15 @@
             <!-- small box -->
             <div class="small-box bg-success" style="padding-top:80px;">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>Bounce Rate</p>
+                <?php 
+                  $countManus = $manufacture->countManus();
+                  foreach($countManus as $key=>$value){
+                    foreach($value as $value2) {
+                ?>
+                <h3><?php echo $value2; ?></h3>
+                <?php } ?>
+                <?php } ?>
+                <p>Manufactures</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -61,9 +73,15 @@
             <!-- small box -->
             <div class="small-box bg-warning" style="padding-top:80px;">
               <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
+                <?php 
+                  $countTypes = $protype->countTypes();
+                  foreach($countTypes as $key=>$value){
+                    foreach($value as $value2) {
+                ?>
+                <h3><?php echo $value2; ?></h3>
+                <?php } ?>
+                <?php } ?>
+                <p>Protypes</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -75,15 +93,21 @@
           <div class="col-lg-6 col-12">
             <!-- small box -->
             <div class="small-box bg-danger" style="padding-top:80px;">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
+            <div class="inner">
+                <?php 
+                  $sumProductsBought = $product->sumProductsBought();
+                  foreach($sumProductsBought as $key=>$value){
+                    foreach($value as $value2) {
+                ?>
+                <h3><?php echo $value2; ?></h3>
+                <?php } ?>
+                <?php } ?>
+                <p>Products Sold</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="products.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

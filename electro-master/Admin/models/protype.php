@@ -42,5 +42,13 @@ class Protype extends Db
         $sql->bind_param("si", $name, $id);     
         return $sql->execute(); //return
     }
+
+    public function countTypes()
+    {
+        $sql = self::$connection->prepare("SELECT COUNT(*) FROM `protypes`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
 }
 ?>

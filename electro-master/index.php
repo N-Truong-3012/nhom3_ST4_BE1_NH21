@@ -59,7 +59,7 @@
 					<div class="col-md-6 col-xs-6">
 						<div class="shop">
 							<div class="shop-img">
-								<img src="./img/Tai nghe không dây JBL Tune 700BT.jpg" alt="">
+								<img src="./img/shop03.png" alt="">
 							</div>
 							<div class="shop-body">
 								<h3>HeadPhone<br>Collection</h3>

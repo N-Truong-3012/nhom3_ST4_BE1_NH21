@@ -27,8 +27,8 @@ include "header.php";
         <div class="card-header">
           <h3 class="card-title">Your Cart</h3>
           <?php
-            $cart = array();
             if (isset($_GET['id'])){
+              $cart = array();
               $id = $_GET['id'];
               if (isset($_SESSION['cart'][$id])){
                 $_SESSION['cart'][$id]++;
@@ -55,6 +55,7 @@ include "header.php";
               </thead>
               <tbody>
                   <?php
+                  if($cart != null){
                     foreach($cart as $key=>$value1):
                       $getAllProducts = $product->getAllProducts();
                       foreach($getAllProducts as $value):
@@ -107,6 +108,7 @@ include "header.php";
                   <?php } ?>
                  <?PHP endforeach; ?>
                  <?PHP endforeach; ?>
+                 <?php } ?>
               </tbody>
           </table>
         </div>

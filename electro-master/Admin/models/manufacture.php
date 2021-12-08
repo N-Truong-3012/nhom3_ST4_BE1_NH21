@@ -41,5 +41,13 @@ class Manufacture extends Db {
         $sql->bind_param("si", $name, $id);     
         return $sql->execute(); //return
     }
+
+    public function countManus()
+    {
+        $sql = self::$connection->prepare("SELECT COUNT(*) FROM `manufactures`");
+        $sql->execute(); //return an object       
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
 }
 ?>
