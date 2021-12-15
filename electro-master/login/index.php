@@ -39,8 +39,11 @@
 						</div>
 						<input type="password" class="form-control" placeholder="password" name="pass">
 					</div>
-					<div class="form-group" style="position: absolute;top: 81%;left: 37%;transform: translate(0, -50%);">
+					<div class="form-group" style="position: absolute;top: 78%;left: 37%;transform: translate(0, -50%);">
 						<input type="submit" value="Login" class="btn float-right login_btn" name="submit">
+					</div>
+					<div class="form-group" style="position: absolute;top: 93%;left: 37%;transform: translate(0, -50%);">
+						<a href="../index.php"><input type="button" value="Thoát" class="btn float-right login_btn" name="out" style=" background-color: red;color: white"></a>
 					</div>
 				</form>
 			</div>

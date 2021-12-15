@@ -8,7 +8,7 @@
         $user_name = $_POST['username'];
         $pass = $_POST['pass'];
         if($user->checkLogin($user_name, $pass)){
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $user_name;
             header('location:../Admin/index.php');
         }
         else{
